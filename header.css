@@ -1,0 +1,80 @@
+header {
+    position: fixed; /* Fijo en la parte superior */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ocupa todo el ancho */
+    height: 150px; /* Altura suficiente para las luces */
+    z-index: 1000; /* Por encima de otros elementos */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  /* Contenedor del hilo y luces */
+  .lights-container {
+    position: relative;
+    width: 100%;
+    height: 150px;
+  }
+  
+  /* Hilo curvado */
+  .string {
+    position: absolute;
+    top: 50px; /* Altura del hilo */
+    left: 0%;
+    width: 100%;
+    height: 10px;
+    border-top: 4px solid #8B4513; /* Color marrón para el hilo */
+    border-radius: 100px; /* Hace que el hilo sea curvado */
+  }
+  
+  /* Luces */
+  .lights {
+    position: absolute;
+    top: 40px; /* Altura de las luces para que cuelguen del hilo */
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Espaciado entre las luces */
+    padding: 0 10%; /* Espaciado lateral */
+  }
+  
+  /* Cada luz */
+  .light {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    animation: blink 1.5s infinite;
+  }
+  
+  /* Colores de las luces */
+  .light.red {
+    background-color: red;
+    animation-delay: 0s;
+  }
+  .light.green {
+    background-color: green;
+    animation-delay: 0.3s;
+  }
+  .light.blue {
+    background-color: blue;
+    animation-delay: 0.6s;
+  }
+  .light.yellow {
+    background-color: yellow;
+    animation-delay: 0.9s;
+  }
+  
+  /* Animación de parpadeo */
+  @keyframes blink {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  }
